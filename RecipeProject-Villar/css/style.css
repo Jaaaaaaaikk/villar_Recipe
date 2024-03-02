@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 20px 30px;
+    box-shadow: 0 0 10px rgb(0, 0, 1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 20px 30px;
+    box-shadow: 0 0 10px rgb(0, 0, 1);
+    margin-top: auto;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    padding: 10px;
+    border: none;
+    width: 40%;
+    font-size: 15px;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 1);
+}
+
+.search button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    border: none;
+    width:  10%;
+    cursor: pointer;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0 10px 10px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(0, 0, 1);
+}
+
+.search button:hover {
+    background-color: #e64a19;
+}
+
+.recipe-img {
+    width: 200px; 
+    height: 150px; 
+    object-fit: cover; 
+    box-shadow: 0 0 10px rgb(0, 0, 1);
+    border-radius: 20px;
+}
+
+
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.recipe-container a {
+    text-decoration: none;
+    font-size: larger;
+}
+
+.recipe-label {
+    display: block;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    color: #140e0e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #aa6060;
+}
+
+@media (max-width: 768px) {
+    .recipe-container {
+        justify-content: center;
+        margin: 100px;
+    }
+
+    .recipe-img {
+        margin: 30px;
+    }
+}

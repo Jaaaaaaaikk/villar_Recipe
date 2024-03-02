@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaik Food Recipes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<YOUR_INTEGRITY_CODE_HERE>" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <header>
+        <h1>Jaikhene Favorite Dishes</h1>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Enter a dish...">
+            <button id="searchButton">Search</button>
+        </div>
+    </header>
+
+    <div class="recipe-container">
+        <a href="adobo.html" class="recipe-link"><img src="css/adobo.jpg" alt="Adobo" class="recipe-img"><span class="recipe-label">Adobo</span></a>
+        <a href="sinigang.html" class="recipe-link"><img src="css/sinigang.jpg" alt="Sinigang" class="recipe-img"><span class="recipe-label">Sinigang</span></a>
+        <a href="kare-kare.html" class="recipe-link"><img src="css/kare-kare.jpg" alt="Kare-Kare" class="recipe-img"><span class="recipe-label">Kare-Kare</span></a>
+        <a href="afritada.html" class="recipe-link"><img src="css/afritada.jpg" alt="Afritada" class="recipe-img"><span class="recipe-label">Afritada</span></a>
+        <a href="mechado.html" class="recipe-link"><img src="css/mechado.jpg" alt="Mechado" class="recipe-img"><span class="recipe-label">Mechado</span></a>
+    </div>
+
+    <footer>
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/kenu.villar"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/Jaaaaaaaikk"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/jaikhene_joy/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>All rights reserved &copy; 2024</p>
+    </footer>
+    
+    <script>
+        document.getElementById("searchButton").addEventListener("click", function() {
+            var input, filter, recipeContainer, recipeLinks, recipeLabels, i;
+            input = document.getElementById("searchInput").value.toUpperCase();
+            recipeContainer = document.querySelector(".recipe-container");
+            recipeLinks = recipeContainer.getElementsByClassName("recipe-link");
+            for (i = 0; i < recipeLinks.length; i++) {
+                recipeLabels = recipeLinks[i].getElementsByClassName("recipe-label")[0];
+                if (input === "" || recipeLabels.innerHTML.toUpperCase().indexOf(input) > -1) {
+                    recipeLinks[i].style.display = "";
+                } else {
+                    recipeLinks[i].style.display = "none";
+                }
+            }
+        });
+    
+        document.getElementById("searchInput").addEventListener("input", function() {
+            var input = this.value.trim();
+            if (input === "") {
+                var recipeLinks = document.querySelectorAll(".recipe-link");
+                recipeLinks.forEach(function(link) {
+                    link.style.display = "";
+                });
+            }
+        });
+    </script>
+</body>
+    
+</html>
